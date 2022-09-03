@@ -1,0 +1,21 @@
+$ mkdir activity2
+$ touch activity2/test1
+$ touch activity2/test2
+$ touch activity2/test3
+$ nano activity2.sh
+#!/bin/bash
+day=$(date +%F)
+cd /home/solomon/activity2
+for file in *
+ do 
+  mv $file ${file}-${day}
+ done
+$ chmod +x activity2.sh
+$ cd activity2/
+$ ls
+test1 test2 test3
+$ cd
+$ ./activity2.sh
+$ cd activity2/
+$ ls
+test1-2022-09-03 test2-2022-09-03 test3-2022-09-03
