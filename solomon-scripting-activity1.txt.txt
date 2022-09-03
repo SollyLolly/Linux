@@ -1,0 +1,22 @@
+$ nano activity1.sh
+
+#!/bin/bash
+
+echo "Your username is $USER"
+date=$(date)
+echo "The current date is $date"
+now=$(date +$%T)
+echo "The time is $now"
+echo "Your current working directory is ${PWD}"
+ls ${PWD} | echo "The amount of files in that directory is $(wc -l)"
+ls ${PWD} | echo "The biggest file in that directory is $(ls -S | head -1)"
+
+============================================================================
+$ chmod +x activity1.sh
+$ ./activity1.sh
+Your username is olomon
+The current date is Sat  3 Sep 13:58:41 BST 2022
+The time is 13:58:41
+Your current working directory is /home/solomon
+The amount of files in that directory is 19
+The biggest file in that directory is solomon.220902.module3
