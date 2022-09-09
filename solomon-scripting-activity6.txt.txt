@@ -1,0 +1,35 @@
+$ vim activity6.sh
+#!/bin/bash
+read -p "Enter a number: " a
+read -p "Enter a number: " b
+if [[ $a =~ ^[0-9]+$ ]] && [[ $b =~ ^[0-9]+$ ]]
+then
+ if (( a>b ))
+ then
+         echo "True"
+ else
+         echo "False"
+ fi
+else
+ echo "You have not input a number"
+fi
+$ chmod +x activity6.sh
+$ vim activity6.sh
+#!/bin/bash
+read -p "Enter a number parameter: " a
+read -p "Enter a number parameter: " b
+diff=$(( $a - $b))
+if [[ $a =~ ^[0-9]+$ ]] && [[ $b =~ ^[0-9]+$ ]]
+then
+ if (( a>b ))
+ then
+         echo "True" 
+         echo "The difference between the two numbers is $diff"
+ else
+         echo "False"
+         echo "The difference between the two numbers is $diff"
+
+ fi
+else
+ echo "You have not input a number"
+fi 

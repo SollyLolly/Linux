@@ -1,0 +1,19 @@
+$ vim activity9.sh
+#!/bin/bash
+
+read -p "Enter a directory: " dir
+if [[ -d $dir ]]
+then
+        echo "ERROR! This directory already exists"
+else
+        (mkdir $dir)
+        echo "Directory $dir has been created"
+fi
+
+=================================================
+$ bash activity9.sh
+Enter a directory: aaa
+Directory aaa has been created
+$ bash activity9.sh
+Enter a directory: aaa
+ERROR! This directory already exists

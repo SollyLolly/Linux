@@ -1,0 +1,34 @@
+$ vim activity3.sh
+#!/bin/bash
+cd ~
+a=$[$(( $RANDOM % 50 + 1 ))]
+b=$[$(( $RANDOM % 50 + 1 ))]
+c=$[$(( $RANDOM % 50 + 1 ))]
+d=$[$(( $RANDOM % 50 + 1 ))]
+e=$[$(( $RANDOM % 50 + 1 ))]
+f=$[$(( $RANDOM % 10 +1 ))]
+
+touch $(date +%F).txt
+echo "$a $b $c $d $e $f" >> "$(date +%F).txt"
+=================================================
+$ vim activity3check.sh
+#!/bin/bash
+echo "Welcome to the lottery"
+read -p "Enter a number from 1-50: " n1
+read -p "Enter a number from 1-50: " n2
+read -p "Enter a number from 1-50: " n3
+read -p "Enter a number from 1-50: " n4
+read -p "Enter a number from 1-50: " n5
+read -p "Enter a bonus ball number from 1-10: " n6
+
+echo "$n1" >> check.txt
+echo "$n2" >> check.txt
+echo "$n3" >> check.txt
+echo "$n4" >> check.txt
+echo "$n5" >> check.txt
+echo "$n6" >> check.txt
+echo "Your chosen numbers are $n1 $n2 $n3 $n4 $n5 $n6 "
+date=$(date +%F).txt
+check=$(grep -Ff $date check.txt)
+echo "The winning numbers are 
+$check "

@@ -1,0 +1,80 @@
+$ vim activity7.sh
+#!/bin/bash
+#This quiz is about sports
+echo "Hello, we are going to play a true or false quiz"
+echo "This quiz is about sports"
+echo "Enter true or false to each question"
+TRUE="true"
+FALSE="false"
+read -p "Tom Brady wears the number 12 " a1
+if [[ "$a1" == "$TRUE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "Usain Bolt is the fastest man " a2
+if [[ "$a2" == "$TRUE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "Messi plays for PSG " a3
+if [[ "$a3" == "$TRUE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "A golf ball is the fastest recorded object in sports " a4
+if [[ "$a4" == "$FALSE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "Paul Gascoigne has won the BBC Sports Personality of the Year Award " a5
+if [[ "$a5" == "$TRUE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "In the Summer Olympics, Michael Phelps has won more gold medals than the country Greece" a6
+if [[ "$a6" == "$FALSE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "Sue Barker has won a tennis Grand Slam tournament " a7
+if [[ "$a7" == "$TRUE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "Cheetahs were raced at Romford Greyhound Stadium in 1937 in an effort to increase attendances " a8
+if [[ "$a8" == "$TRUE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "The Indy 500 automobile race is actually raced over 300 miles " a9
+if [[ "$a9" == "$FALSE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+read -p "Steve Cram won an Olympic gold medal " a10
+if [[ "$a10" == "$FALSE" ]]
+then
+        echo "Well done, you got the right answer"
+else
+        echo "Incorrect, you got the answer wrong"
+fi
+===============================================================
+I know this code is very bad, please suggest improvements

@@ -1,0 +1,25 @@
+$ vim activity4.sh
+#!/bin/bash
+read -p "Enter your password: " password
+length="${#password}"
+if test $length -ge 8 ; then
+ if echo $password | grep [A-Za-z][0-9]
+ then
+         echo "This password is secure"
+ else
+        echo "This password is not secure, it must be 8 or more characters, contain numbers and letters and upper and lowercase letters "        
+ fi
+else
+        echo "This password is not secure, it must be 8 or more characters, contain numbers and letters and upper and lowercase letters "
+fi
+=====================================================================
+$ chmod +x activity4.sh
+$ ./activity4.sh
+Enter your password
+solomon
+This password is not secure, it must be 8 or more characters, contain numbers and letters and upper and lowercase letters
+$ ./activity4
+Enter your password
+Solomon11
+Solomon11
+This password is secure

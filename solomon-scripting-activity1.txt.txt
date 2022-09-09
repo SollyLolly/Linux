@@ -14,7 +14,7 @@ ls ${PWD} | echo "The biggest file in that directory is $(ls -S | head -1)"
 ============================================================================
 $ chmod +x activity1.sh
 $ ./activity1.sh
-Your username is olomon
+Your username is solomon
 The current date is Sat  3 Sep 13:58:41 BST 2022
 The time is 13:58:41
 Your current working directory is /home/solomon
