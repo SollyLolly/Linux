@@ -1,0 +1,11 @@
+$ vim activity11.sh
+#!/bin/bash
+input="/home/solomon/number.txt"
+while read -r line
+do
+        echo "$line"
+done < "$input"
+numbers=$(cat number.txt)
+rev=$(echo "$numbers" | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }')
+uniq=$( awk 'BEGIN{RS=ORS=" "}!a[$0]++' <<<$rev );
+echo $uniq

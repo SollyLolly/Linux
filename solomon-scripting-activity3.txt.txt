@@ -9,9 +9,15 @@ e=$[$(( $RANDOM % 50 + 1 ))]
 f=$[$(( $RANDOM % 10 +1 ))]
 
 touch $(date +%F).txt
-echo "$a $b $c $d $e $f" >> "$(date +%F).txt"
+echo "$a" >> "$(date +%F).txt"
+echo "$b" >> "$(date +%F).txt"
+echo "$c" >> "$(date +%F).txt"
+echo "$d" >> "$(date +%F).txt"
+echo "$e" >> "$(date +%F).txt"
+echo "$f" >> "$(date +%F).txt"
+
 =================================================
-$ vim activity3check.sh
+$ vim acitivity3check.sh
 #!/bin/bash
 echo "Welcome to the lottery"
 read -p "Enter a number from 1-50: " n1
@@ -20,7 +26,7 @@ read -p "Enter a number from 1-50: " n3
 read -p "Enter a number from 1-50: " n4
 read -p "Enter a number from 1-50: " n5
 read -p "Enter a bonus ball number from 1-10: " n6
-
+touch check.txt
 echo "$n1" >> check.txt
 echo "$n2" >> check.txt
 echo "$n3" >> check.txt
@@ -29,6 +35,10 @@ echo "$n5" >> check.txt
 echo "$n6" >> check.txt
 echo "Your chosen numbers are $n1 $n2 $n3 $n4 $n5 $n6 "
 date=$(date +%F).txt
-check=$(grep -Ff $date check.txt)
+win="$(cat $date)"
 echo "The winning numbers are 
-$check "
+$win "
+match="$(grep -Ff $date check.txt)"
+echo "You matched 
+$match "
+rm check.txt                 

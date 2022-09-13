@@ -1,0 +1,138 @@
+$ vim activity4.sh
+#!/bin/bash
+
+echo "Hello, you will enter 5-10 integers"
+read -p "Please enter a number: " n1
+read -p "Please enter another number: " n2
+read -p "Please enter another number: " n3
+read -p "Please enter another number: " n4
+read -p "Please enter another number: " n5
+read -p "Do you want to enter more numbers? y/n " decision
+yes="y"
+no="n"
+if [[ "$decision" == "$yes" ]]
+then
+        read -p "Enter another number: " n6
+        read -p "Do you want to enter more numbers? y/n " decision1
+        if [[ "$decision1" == "$yes" ]]
+        then
+         read -p "Enter another number: " n7
+         read -p "Do you want to enter another number? y/n " decision2
+        elif [[ "$decision1" == "$no" ]]
+         then
+         numbers6="$n1 $n2 $n3 $n4 $n5 $n6"
+         numb6=($n1 $n2 $n $n4 $n5 $n6)
+         prod6=$(( n1 * n2 * n3 *n4 * n5 * n6))
+         avg6=$(( (n1 + n2 + n3 + n4 + n5 + n6)/6 ))
+         sum6=$(( n1 + n2 + n3 + n4 + n5 + n6))
+         min6="$(printf "%d\n" "${numb6[@]}" | sort -rn | tail -1)"
+         max6="$(printf "%d\n" "${numb6[@]}" | sort -rn | head -1)"
+         echo "The numbers you entered are $numbers6"
+         echo "The product of the numbers is $prod6"
+         echo "The average of the numbers is $avg6"
+         echo "The sum of the numbers is $sum6"
+         echo "The minimum of the numbers is $min6"
+         echo "The maximum of the numbers is $max6"  
+        else [[ "$decision1" != "$yes" ]] && [[ "$decision1" != "$no" ]]
+         echo "ERROR! You did not enter y/n"
+        fi
+          if [[ "$decision2" == "$yes" ]]
+          then
+           read -p "Enter another number: " n8
+           read -p "Do you want to enter another number? y/n " decision3
+          elif [[ "$decision2" == "$no" ]]
+           then
+           numbers7="$n1 $n2 $n3 $n4 $n5 $n6 $n7"
+           numb7=($n1 $n2 $n3 $n4 $n5 $n6 $n7)
+           prod7=$(( n1 * n2 * n3 *n4 * n5 * n6 * n7))
+           avg7=$(( (n1 + n2 + n3 + n4 + n5 + n6 + n7)/7 ))
+           sum7=$(( n1 + n2 + n3 + n4 + n5 + n6 + n7))
+           min7="$(printf "%d\n" "${numb7[@]}" | sort -rn | tail -1)"
+           ax7="$(printf "%d\n" "${numb7[@]}" | sort -rn | head -1)"
+           echo "The numbers you entered are $numbers7"
+           echo "The product of the numbers is $prod7"
+           echo "The average of the numbers is $avg7"
+           echo "The sum of the numbers is $sum7"
+           echo "The minimum of the numbers is $min7"
+           echo "The maximum of the numbers is $max7"  
+          else [[ "$decision2" != "$yes" ]] && [[ "$decision2" != "$no" ]]
+           echo "ERROR! You did not enter y/n"
+          fi
+
+            if [[ "$decision3" == "$yes" ]]
+            then
+              read -p "Enter another number: " n9
+              read -p "Do you want to enter another number? y/n " decision4
+            elif [[ "$decision3" == "$no" ]]
+            then
+             numbers8="$n1 $n2 $n3 $n4 $n5 $n6 $n7 $n8"
+             numb8=($n1 $n2 $n3 $n4 $n5 $n6 $n7 $n8)
+             prod8=$(( n1 * n2 * n3 *n4 * n5 * n6 * n7 * n8))
+             avg8=$(( (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8)/8 ))
+             sum8=$(( n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8))
+             min8="$(printf "%d\n" "${numb8[@]}" | sort -rn | tail -1)"
+             max8="$(printf "%d\n" "${numb8[@]}" | sort -rn | head -1)"
+             echo "The numbers you entered are $numbers8"
+             echo "The product of the numbers is $prod8"
+             echo "The average of the numbers is $avg8"
+             echo "The sum of the numbers is $sum8"
+             echo "The minimum of the numbers is $min8"
+             echo "The maximum of the numbers is $max8"  
+            else [[ "$decision3" != "$yes" ]] && [[ "$decision3" != "$no" ]]
+             echo "ERROR! You did not enter y/n"
+             fi
+              if [[ "$decision4" == "$yes" ]]
+              then
+               read -p "Enter another number: " n10
+               numbers10="$n1 $n2 $n3 $n4 $n5 $n6 $n7 $n8 $n9 $n10"
+               numb10=($n1 $n2 $n3 $n4 $n5 $n6 $n7 $n8 $n9 $n10)
+               prod10=$(( n1 * n2 * n3 *n4 * n5 * n6 * n7 * n8 * n9 * n10 ))
+               avg10=$(( (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + n10)/10 ))
+               sum10=$(( n1 + n2 + n3 + n4 + n5 + n6))
+               min10="$(printf "%d\n" "${numb10[@]}" | sort -rn | tail -1)"
+               max10="$(printf "%d\n" "${numb10[@]}" | sort -rn | head -1)"
+               echo "The numbers you entered are $numbers10"
+               echo "The product of the numbers is $prod10"
+               echo "The average of the numbers is $avg10"
+               echo "The sum of the numbers is $sum10"
+               echo "The minimum of the numbers is $min10"
+               cho "The maximum of the numbers is $max10"             
+              elif [[ "$decision4" == "$no" ]]
+              then
+               numbers9="$n1 $n2 $n3 $n4 $n5 $n6 $n7 $n8 $n9"
+               numb9=($n1 $n2 $n3 $n4 $n5 $n6 $n7 $n8 $n9)
+               prod9=$(( n1 * n2 * n3 *n4 * n5 * n6 * n7 * n8 * n9 ))
+               avg9=$(( (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9)/9 ))
+               sum9=$(( n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9))
+               min9="$(printf "%d\n" "${numb9[@]}" | sort -rn | tail -1)"
+               max9="$(printf "%d\n" "${numb9[@]}" | sort -rn | head -1)"
+               echo "The numbers you entered are $numbers9"
+               echo "The product of the numbers is $prod9"
+               echo "The average of the numbers is $avg9"
+               echo "The sum of the numbers is $sum9"
+               echo "The minimum of the numbers is $min9"
+               echo "The maximum of the numbers is $max9"
+              else [[ "$decision4" != "$yes" ]] && [[ "$decision4" != "$no" ]]
+              echo "ERROR! You did not enter y/n"
+              fi
+elif [[ "$decision" == "$no" ]]
+then
+        numbers="$n1 $n2 $n3 $n4 $n5"
+        numb=($n1 $n2 $n3 $n4 $n5)
+        prod1=$(( n1 * n2 * n3 *n4 * n5 ))
+        avg1=$(( (n1 + n2 + n3 + n4 + n5)/5 ))
+        sum1=$(( n1 + n2 + n3 + n4 + n5 ))
+        min1="$(printf "%d\n" "${numb[@]}" | sort -rn | tail -1)"
+        max1="$(printf "%d\n" "${numb[@]}" | sort -rn | head -1)"
+        echo "The numbers you entered are $numbers"
+        echo "The product of the numbers is $prod1"
+        echo "The average of the numbers is $avg1"
+        echo "The sum of the numbers is $sum1"
+        echo "The minimum of the numbers is $min1"
+        echo "The maximum of the numbers is $max1"
+else [[ "$decision" != "$yes" ]] && [[ "$decision" != "$no" ]]
+        echo "ERROR! You did not enter y/n"
+fi
+
+
+   

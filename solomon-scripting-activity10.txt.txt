@@ -1,0 +1,15 @@
+$ vim activity10.sh
+#!/bin/bash
+read -p "Enter a file name: " file
+read -p "Enter the number of lines to write: " number
+random=$$
+if [[ ! -f $file ]]
+then
+        echo "ERROR! $file does not exist"
+elif [[ -f $file ]]
+then
+ for i in `seq $number`
+ do
+        echo $random >> $file
+ done
+fi

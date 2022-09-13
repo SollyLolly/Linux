@@ -1,0 +1,80 @@
+$ echo "1" >> file1.txt
+$ echo "2" >> file1.txt
+$ echo "4" >> file1.txt
+$ echo "6" >> file1.txt
+$ echo "1" >> file2.txt
+$ echo "2" >> file2.txt
+$ echo "89" >> file2.txt
+$ echo "6" >> file2.txt
+$ echo "7" >> file2.txt
+$ vim activity13.sh
+#!/bin/bash
+file1=$( cat file1.txt )
+file2=$( cat file2.txt )
+echo "File 1 contains:
+$file1"
+echo "File 2 contains:
+$file2"
+diff1=$(awk 'FNR==NR {a[$0]++; next} !($0 in a)' file2.txt file1.txt)
+diff2=$(awk 'FNR==NR {a[$0]++; next} !($0 in a)' file1.txt file2.txt)
+echo "Only in file 1:
+$diff1
+
+
+Only in file 2:
+$diff2"
+==========================================================================
+$ cat acitivty13.sh
+File 1 contains:
+1
+2
+4
+6
+File 2 contains:
+1
+2
+89
+6
+7
+Only in file 1:
+4
+
+
+Only in file 2:
+89
+7
+
+
+$ vim activity13check.txt
+#!/bin/bash
+file1=$( cat file1.txt )
+file2=$( cat file2.txt )
+echo "File 1 contains:
+$file1"
+echo "File 2 contains:
+$file2"
+match1=$(grep -Fxvf file2.txt file1.txt)
+match2=$(grep -Fxvf file1.txt file2.txt)
+echo "Only in file 1:
+$match1
+
+Only in file 2:
+$match2"
+================================================
+File 1 contains:
+1
+2
+4
+6
+File 2 contains:
+1
+2
+89
+6
+7
+Only in file 1:
+4
+
+Only in file 2:
+89
+7

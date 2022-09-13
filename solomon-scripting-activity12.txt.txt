@@ -1,0 +1,29 @@
+$ echo "test1" >> test1.txt
+$ echo "test2" >> test1.txt
+$ echo "test3" >> test1.txt
+$ echo "test1" >> test2.txt
+$ echo "test3" >> test2.txt
+$ echo "test5" >> test2.txt
+$ vim activity12.sh
+#!/bin/bash
+read -p "Enter a filename: " n1
+if [[ ! -f $n1 ]]
+then
+        echo "ERROR! $n1 does not exist"
+fi
+read -p "Enter another filename: " n2
+if [[ ! -f $n2 ]]
+then
+        echo "ERROR! $n2 does not exist"
+else [[ -f $n1 ]] && [[ -f $n2 ]]
+common=$(comm -12 $n1 $n2)
+        echo "The common elements of the files are
+$common"
+fi
+==============================================================
+$ bash activity12.sh
+Enter a filename: test1.txt
+Enter another filename: test2.txt
+The common elements of the files are
+test1
+test3
